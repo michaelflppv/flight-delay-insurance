@@ -1,4 +1,6 @@
 # Flight Delay Insurance, Web3 Platform
+![Group 6 (1)](https://github.com/user-attachments/assets/53b590d8-a603-42c8-ab7e-c641af4a235b)
+
 ## ABSTRACT
 The Purpose of this Report is to show how Ethereum can be implemented in flight delay insurance. Our Solution allows customers to buy flight delay insurance policies that automatically trigger payouts based on real-time fight data by utilizing a decentralized marketplace on Ethereum. This Paper describes business strategy that prioritizes efficiency, cost-savings, and market transparency along with the technical implementation, which includes machine learning models for delay prediction and dynamic insurance pricing. According to our analysis that this blockchain-based solution offers an alternative to traditional insurance with the potential to lower fraud and enhancing customer satisfaction through automated claim processing.
 ## Introduction
