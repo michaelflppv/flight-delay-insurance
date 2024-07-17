@@ -1,8 +1,18 @@
+"""
+Author: Mikhail Filippov (University of Mannheim)
+Version: 15.07.2024
+"""
+
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
 
-STANDARD_PRICE = 72.24  # Standard price for the insurance
+POLICY_PRICES = {
+    1: 72.24,
+    2: 84.98,
+    3: 95.50,
+    4: 105.00,
+}
 
 
 class WebApp:
@@ -11,14 +21,14 @@ class WebApp:
         self.model_class = joblib.load('flight_delay_classifier_v1.pkl')
         self.model_reg = joblib.load('flight_delay_regressor_v1.pkl')
 
-    def calculate_insurance_price(self, is_delayed, delay_duration):
+    def calculate_insurance_price(self, is_delayed, delay_duration, standard_price):
         if is_delayed:
             # Calculate the number of 10 minute intervals in the delay duration
             intervals = delay_duration // 10
             # Increase the insurance price by 10% for each 10 minute interval
-            insurance_price = STANDARD_PRICE * (1 + 0.1 * intervals)
+            insurance_price = standard_price * (1 + 0.1 * intervals)
         else:
-            insurance_price = STANDARD_PRICE
+            insurance_price = standard_price
         return round(insurance_price, 2)
 
     def predict(self):
@@ -26,6 +36,12 @@ class WebApp:
         def predict():
             # Get the parameters from the request
             params = request.get_json(force=True)
+
+            # Extract the POLICY_ID from the parameters
+            policy_id = params.pop('POLICY_ID', None)
+
+            # Get the standard price for the policy
+            standard_price = POLICY_PRICES.get(policy_id, 72.24)
 
             # Convert the parameters to a DataFrame
             df_params = pd.DataFrame([params])
@@ -59,7 +75,7 @@ class WebApp:
                 delay_duration = 0
 
             # Calculate the insurance price for the flight
-            insurance_price = self.calculate_insurance_price(is_delayed, delay_duration)
+            insurance_price = self.calculate_insurance_price(is_delayed, delay_duration, standard_price)
 
             # Return the predictions and insurance price
             return jsonify({
