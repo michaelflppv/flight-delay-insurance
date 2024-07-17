@@ -1,8 +1,14 @@
+"""
+Author: Mikhail Filippov (University of Mannheim)
+Version: 15.07.2024
+"""
+
 import requests
 
-url = 'http://192.168.0.100:5000/predict'
+url = 'http://192.168.1.100:5000/predict'  # Replace with the server's IP address
 
 data = {
+    'POLICY_ID': 1,
     'AIRLINE_CODE': 'NK',
     'ORIGIN_CITY': 'Denver, CO',
     'DEST_CITY': 'Houston, TX',

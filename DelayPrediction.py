@@ -1,3 +1,8 @@
+"""
+Author: Mikhail Filippov (University of Mannheim)
+Version: 15.07.2024
+"""
+
 import numpy as np  # Import NumPy for numerical operations
 import pandas as pd  # Import Pandas for data manipulation and analysis
 # Import RandomForestClassifier and RandomForestRegressor
