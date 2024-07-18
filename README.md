@@ -1,6 +1,62 @@
 # Flight Delay Insurance, Web3 Platform
 ![Group 6 (1)](https://github.com/user-attachments/assets/53b590d8-a603-42c8-ab7e-c641af4a235b)
 
+# Getting Started
+To run this code locally or integrate it into a web application, follow the steps below.
+
+## Prerequisites
+Make sure you have the following installed:
+
+Python (>= 3.6)
+pip (Python package installer)
+
+## Installation
+1. Clone the repository:
+
+git clone https://github.com/yourusername/flight-delay-prediction.git
+cd flight-delay-prediction
+
+2. Install the required Python packages:
+
+pip install -r requirements.txt
+
+## Usage
+Training the Models
+1. Ensure mode variable is set to "train" in DelayPrediction.py.
+
+2. Run the training script to train the RandomForest models:
+
+python DelayPrediction.py
+
+## Making Predicitons
+1. Set mode variable to "test" in main.py to load pre-trained models.
+
+2. Use the provided WebApp class to serve predictions via a REST API. Start the server:
+
+python WebApp.py
+
+4. Use the requests library to send a POST request with flight details to the server:
+
+import requests
+
+url = 'http://localhost:5000/predict'
+data = {
+    'POLICY_ID': 1,
+    'AIRLINE_CODE': 'NK',
+    'ORIGIN_CITY': 'Denver, CO',
+    'DEST_CITY': 'Houston, TX',
+    'CRS_DEP_TIME': 1534,
+    'FL_DATE': '2024-07-15'
+}
+
+response = requests.post(url, json=data)
+
+if response.status_code == 200:
+    result = response.json()
+    print(f"Insurance price: {result['insurance_price']} dollars")
+else:
+    print(f"Request failed with status code {response.status_code}")
+
 ## ABSTRACT
 The objective of this report is to demonstrate the potential of Ethereum as a platform for flight delay insurance. Our solution allows customers to purchase flight delay insurance that automatically triggers payouts based on real-time flight data by leveraging a decentralized marketplace on Ethereum. This paper presents a business strategy that emphasizes efficiency, cost savings, and market transparency, as well as a technical implementation that includes machine learning models for delay prediction and dynamic insurance rates. Our analysis indicates that this blockchain-based solution offers an alternative to traditional insurance, with the potential to reduce fraud and increase customer satisfaction through automated claims processing. 
 
