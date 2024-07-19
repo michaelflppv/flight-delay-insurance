@@ -7,8 +7,8 @@ To run this code locally or integrate it into a web application, follow the step
 ## Prerequisites
 Make sure you have the following installed:
 
-Python (>= 3.6)
-pip (Python package installer)
+- Python (>= 3.6)
+- pip (Python package installer)
 
 ## Installation
 1. Clone the repository:
