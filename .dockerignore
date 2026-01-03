@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Data and models (mount as volumes instead)
+data/
+*.csv
+*.pkl
+logs/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.md
+!CLAUDE.md
+
+# Tests
+tests/
+.pytest_cache/
+.coverage
+
+# Solidity
+Solidity/
+node_modules/
+
+# Misc
+LICENSE
+.dockerignore
+docker-compose.yml
