@@ -176,33 +176,6 @@ However, there are also some challenges associated with this platform. Navigatin
 
 Although several challenges can be identified, the proposed blockchain-based platform for flight delay insurance is considered promising. Provided that regulatory, trust-related and technological hurdles are overcome, it could revolutionize the insurance industry and set a new standard for automated and transparent insurance solutions. Such innovation could lead to a more efficient, cost-effective and trustworthy insurance experience for consumers worldwide. 
 
-# Author Contributions
-## Contributors
-- Darryl Nyamayaro (University of Cape Town)
-- Eren Tomak (Baskent University)
-- Mauro Dünki (University of Zurich)
-- Mikhail Filippov (University of Mannheim)
-- Sulagsaan Jeyekumar (University of Zurich)
-
-All authors conceived and designed the project idea. Below is a detailed overview of each author's specific contributions. All authors reviewed and approved the final version of this document. 
-
-Abstract, Introdcuction and Conclusion: 
-- Sulagsaan Jeyekumar 
-- Mauro Dünki 
-
-Business Section: 
-- Sulagsaan Jeyekumar: Market Analysis and Business Case 
-- Mauro Dünki: Market Analysis 
-- Eren Tokmak: Economics of the Token 
-
-Technical Section: 
-- Eren Tokmak
-- Mikhail Filippov: Data Gathering & Preprocessing, Predictive Analysis, Machine Learning, Flask Web Application 
-- Darryl Nyamayaro 
-
-Regulatory Section: 
-- Mauro Dünki
-
 # References
 5 U.S.C. § 45 (1914, as amended in 1994).  
 
